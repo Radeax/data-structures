@@ -45,6 +45,22 @@ class SinglyLinkedList {
             return;
         }
     }
+
+    public function find($val) {
+        if($this->head->value == $val) {
+            return true;
+        }
+        $current = $this->head;
+        while($current->next && $current->next->value != $val) {
+            $current = $current->next;
+        }
+        if(!$current->next) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
 
 $newList = new SinglyLinkedList();
@@ -54,7 +70,7 @@ $newList->add(2);
 $newList->add(3);
 $newList->add(4);
 $newList->add(5);
-$newList->remove(2);
+var_dump($newList->find(3));
 
 var_dump($newList);
 
