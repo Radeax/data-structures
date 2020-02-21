@@ -1,8 +1,8 @@
 <?php
 
 class Node {
-    public function __construct($val) {
-        $this->value = $val;
+    public function __construct($value) {
+        $this->val = $value;
         $this->next = null;
     }
 }
@@ -12,9 +12,9 @@ class SinglyLinkedList {
         $this->head = null;
     }
 
-    public function addBack($val) {
+    public function addBack($value) {
         if($this->head == null) {
-            $this->head = new Node($val);
+            $this->head = new Node($value);
             return $this;
         }
         else {
@@ -22,21 +22,21 @@ class SinglyLinkedList {
             while($current->next != null) {
                 $current = $current->next;
             }
-            $current->next = new Node($val);
+            $current->next = new Node($value);
             return $this;
         }
     }
 
-    public function removeVal($val) {
+    public function removeVal($value) {
         if($this->head == null) {
             return $this;
         }
-        if($this->head->value == $val) {
+        if($this->head->val == $value) {
             $this->head = $this->head->next;
             return $this;
         }
         $current = $this->head;
-        while($current->next->value != $val && $current->next) {
+        while($current->next->val != $value && $current->next) {
             $current = $current->next;
         }
         if (!$current->next) {
@@ -48,12 +48,12 @@ class SinglyLinkedList {
         }
     }
 
-    public function contains($val) {
-        if($this->head->value == $val) {
+    public function contains($value) {
+        if($this->head->val == $value) {
             return true;
         }
         $current = $this->head;
-        while($current->next && $current->next->value != $val) {
+        while($current->next && $current->next->val != $value) {
             $current = $current->next;
         }
         if(!$current->next) {
