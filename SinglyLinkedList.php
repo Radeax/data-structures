@@ -15,6 +15,7 @@ class SinglyLinkedList {
     public function add($val) {
         if($this->head == null) {
             $this->head = new Node($val);
+            return $this;
         }
         else {
             $current = $this->head;
@@ -22,27 +23,28 @@ class SinglyLinkedList {
                 $current = $current->next;
             }
             $current->next = new Node($val);
+            return $this;
         }
     }
 
     public function remove($val) {
         if($this->head == null) {
-            return;
+            return $this;
         }
         if($this->head->value == $val) {
             $this->head = $this->head->next;
-            return;
+            return $this;
         }
         $current = $this->head;
         while($current->next->value != $val && $current->next) {
             $current = $current->next;
         }
         if (!$current->next) {
-            return;
+            return $this;
         }
         else {
             $current->next = $current->next->next;
-            return;
+            return $this;
         }
     }
 
