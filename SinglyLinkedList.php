@@ -12,7 +12,7 @@ class SinglyLinkedList {
         $this->head = null;
     }
 
-    public function add($val) {
+    public function addBack($val) {
         if($this->head == null) {
             $this->head = new Node($val);
             return $this;
@@ -27,7 +27,7 @@ class SinglyLinkedList {
         }
     }
 
-    public function remove($val) {
+    public function removeVal($val) {
         if($this->head == null) {
             return $this;
         }
@@ -48,7 +48,7 @@ class SinglyLinkedList {
         }
     }
 
-    public function find($val) {
+    public function contains($val) {
         if($this->head->value == $val) {
             return true;
         }
