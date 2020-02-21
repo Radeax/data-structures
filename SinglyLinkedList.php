@@ -12,6 +12,17 @@ class SinglyLinkedList {
         $this->head = null;
     }
 
+    public function addFront($value) {
+        if($this->head == null) {
+            $this->head == new Node($value);
+            return $this;
+        }
+        $temp = $this->head;
+        $this->head = new Node($value);
+        $this->head->next = $temp;
+        return $this;
+    }
+
     public function addBack($value) {
         if($this->head == null) {
             $this->head = new Node($value);
