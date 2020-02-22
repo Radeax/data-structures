@@ -12,6 +12,7 @@ class SinglyLinkedList {
         $this->head = null;
     }
 
+    // Add a node to the front
     public function addFront($value) {
         if($this->head == null) {
             $this->head = new Node($value);
@@ -23,6 +24,7 @@ class SinglyLinkedList {
         return $this;
     }
 
+    // Remove head node
     public function removeFront() {
         if($this->head == null) {
             return null;
@@ -33,6 +35,7 @@ class SinglyLinkedList {
         }
     }
 
+    // Return head node value
     public function front() {
         if($this->head == null) {
             return null;
@@ -42,6 +45,7 @@ class SinglyLinkedList {
         }
     }
 
+    // Add node at the end
     public function addBack($value) {
         if($this->head == null) {
             $this->head = new Node($value);
@@ -57,6 +61,7 @@ class SinglyLinkedList {
         }
     }
 
+    // Remove first occurrence of node with specified value
     public function removeVal($value) {
         if($this->head == null) {
             return $this;
@@ -78,6 +83,7 @@ class SinglyLinkedList {
         }
     }
 
+    // Check if list has a node with specified value
     public function contains($value) {
         if($this->head->val == $value) {
             return true;
