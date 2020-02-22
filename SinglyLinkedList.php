@@ -14,13 +14,23 @@ class SinglyLinkedList {
 
     public function addFront($value) {
         if($this->head == null) {
-            $this->head == new Node($value);
+            $this->head = new Node($value);
             return $this;
         }
         $temp = $this->head;
         $this->head = new Node($value);
         $this->head->next = $temp;
         return $this;
+    }
+
+    public function removeFront() {
+        if($this->head == null) {
+            return null;
+        }
+        else {
+            $this->head = $this->head->next;
+            return $this;
+        }
     }
 
     public function addBack($value) {
@@ -78,12 +88,12 @@ class SinglyLinkedList {
 
 $newList = new SinglyLinkedList();
 
-$newList->add(1);
-$newList->add(2);
-$newList->add(3);
-$newList->add(4);
-$newList->add(5);
-var_dump($newList->find(3));
+$newList->addFront(1);
+$newList->addFront(2);
+$newList->addFront(3);
+$newList->addFront(4);
+$newList->addFront(5);
+$newList->removeFront();
 
 var_dump($newList);
 
