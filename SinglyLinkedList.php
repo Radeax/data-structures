@@ -33,6 +33,15 @@ class SinglyLinkedList {
         }
     }
 
+    public function front() {
+        if($this->head == null) {
+            return null;
+        }
+        else {
+            return $this->head->val;
+        }
+    }
+
     public function addBack($value) {
         if($this->head == null) {
             $this->head = new Node($value);
@@ -94,6 +103,7 @@ $newList->addFront(3);
 $newList->addFront(4);
 $newList->addFront(5);
 $newList->removeFront();
+var_dump($newList->front());
 
 var_dump($newList);
 
